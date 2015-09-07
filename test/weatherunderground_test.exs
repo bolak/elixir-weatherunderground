@@ -9,9 +9,10 @@ defmodule WeatherUndergroundTest do
   end
 
   test "conditions" do
-    client_key = System.get_env("WUNDERGROUND")
-    options = %{ client_key: client_key, state: "FL", city: "Orlando" }
-    assert {:ok, _} = WeatherUnderground.conditions(options)
+    assert {:ok, _} = WeatherUnderground.conditions("FL", "Orlando")
   end
 
+  test "forecast" do
+    assert {:ok, _} = WeatherUnderground.forecast("FL", "Orlando")
+  end
 end
