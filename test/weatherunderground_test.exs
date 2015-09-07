@@ -9,7 +9,8 @@ defmodule WeatherUndergroundTest do
   end
 
   test "city_conditions" do
-    options = %{ client_key: "c53f1849879a17da", state: "FL", city: "Orlando" }
+    client_key = System.get_env("WUNDERGROUND")
+    options = %{ client_key: client_key, state: "FL", city: "Orlando" }
     assert {:ok, _} = WeatherUnderground.city_conditions(options)
   end
 

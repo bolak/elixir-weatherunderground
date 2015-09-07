@@ -16,6 +16,7 @@ defmodule WeatherUnderground.Mixfile do
   def application do
     [applications: [:logger]]
     [applications: [:json]]
+    [applications: [:dotenv]]
     [applications: [:httpotion]]
   end
 
@@ -32,7 +33,8 @@ defmodule WeatherUnderground.Mixfile do
     [
       {:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.2"},
       {:httpotion, "~> 2.1.0"},
-      {:json, "~> 0.3.0"}
+      {:json, "~> 0.3.0"},
+      {:dotenv, "~> 1.0.0"}
     ]
   end
 end
