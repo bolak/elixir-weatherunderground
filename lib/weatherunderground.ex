@@ -1,6 +1,6 @@
 defmodule WeatherUnderground do
 
-  def city_conditions(options) do
+  def conditions(options) do
     # Method setup.
     client_key = options[:client_key]
     state = options[:state]

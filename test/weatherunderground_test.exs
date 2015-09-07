@@ -8,10 +8,10 @@ defmodule WeatherUndergroundTest do
     assert 1 + 1 == 2
   end
 
-  test "city_conditions" do
+  test "conditions" do
     client_key = System.get_env("WUNDERGROUND")
     options = %{ client_key: client_key, state: "FL", city: "Orlando" }
-    assert {:ok, _} = WeatherUnderground.city_conditions(options)
+    assert {:ok, _} = WeatherUnderground.conditions(options)
   end
 
 end
