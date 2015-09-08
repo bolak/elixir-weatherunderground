@@ -7,12 +7,14 @@ defmodule WeatherUndergroundTest do
   test "the truth" do
     assert 1 + 1 == 2
   end
-
+  
   test "conditions" do
-    assert {:ok, _} = WeatherUnderground.conditions("FL", "Orlando")
+    {_, response} = WeatherUnderground.conditions("FL", "Orlando")
+    assert nil = response["error"]
   end
 
   test "forecast" do
-    assert {:ok, _} = WeatherUnderground.forecast("FL", "Orlando")
+    {_, response} = WeatherUnderground.forecast("FL", "Orlando")
+    assert nil = response["error"]
   end
 end
