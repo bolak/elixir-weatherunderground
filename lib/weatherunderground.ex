@@ -13,7 +13,7 @@ defmodule WeatherUnderground do
     JSON.decode response.body
   end
 
-  def parse_options(state,city) do
+  defp parse_options(state,city) do
     state = state |> String.upcase
     city = String.replace(city," ","_") |> String.downcase
     {state, city}
